@@ -34,6 +34,8 @@ steps:
     ANDROID_BUILD_TOOLS: "28.0.2"
     ANDROID_SDK_TOOLS: "4333796"
   commands:
+  - export ANDROID_HOME=$PWD/android-sdk-linux
+  - export PATH=$PATH:$PWD/android-sdk-linux/platform-tools/
   - ./gradlew -Pci --console=plain :app:lintDebug -PbuildDir=lint
 
 ---
