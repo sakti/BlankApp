@@ -10,7 +10,6 @@ steps:
 - name: assembleDebug
   image: circleci/android:api-28
   commands:
-  - chmod +x ./gradlew
   - ./gradlew assembleDebug
 
 - name: lintDebug
