@@ -38,15 +38,6 @@ steps:
   - export PATH=$PATH:$PWD/android-sdk-linux/platform-tools/
   - ./gradlew -Pci --console=plain :app:lintDebug -PbuildDir=lint
 
----
-kind: pipeline
-name: test
-
-platform:
-  os: linux
-  arch: amd64
-
-steps:
 - name: debugTests
   image: openjdk:8-jdk
   environment:
@@ -59,6 +50,3 @@ steps:
   - chmod +x ./gradlew
   - "yes | android-sdk-linux/tools/bin/sdkmanager --licenses"
   - ./gradlew -Pci --console=plain :app:testDebug
-
-depends_on:
-- build
