@@ -9,6 +9,10 @@ platform:
 steps:
 - name: assembleDebug
   image: openjdk:8-jdk
+  environment:
+    ANDROID_COMPILE_SDK: "28"
+    ANDROID_BUILD_TOOLS: "28.0.2"
+    ANDROID_SDK_TOOLS: "4333796"
   commands:
   - apt-get --quiet update --yes
   - apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
@@ -27,6 +31,10 @@ steps:
 
 - name: lintDebug
   image: openjdk:8-jdk
+  environment:
+    ANDROID_COMPILE_SDK: "28"
+    ANDROID_BUILD_TOOLS: "28.0.2"
+    ANDROID_SDK_TOOLS: "4333796"
   commands:
   - apt-get --quiet update --yes
   - apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
@@ -54,6 +62,10 @@ platform:
 steps:
 - name: debugTests
   image: openjdk:8-jdk
+  environment:
+    ANDROID_COMPILE_SDK: "28"
+    ANDROID_BUILD_TOOLS: "28.0.2"
+    ANDROID_SDK_TOOLS: "4333796"
   commands:
   - apt-get --quiet update --yes
   - apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
