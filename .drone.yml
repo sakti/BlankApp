@@ -10,7 +10,7 @@ steps:
 - name: assembleDebug
   image: circleci/android:api-28
   commands:
-  - sudo chmod 755 -R /drone/src
+  - sudo chmod 777 -R /drone/src
   - sudo chmod +x ./gradlew
   - ./gradlew androidDependencies
   - ./gradlew assembleDebug
